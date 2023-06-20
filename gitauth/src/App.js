@@ -17,7 +17,7 @@ const App = () => {
         </Route>
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/repos" component={ReposPage} />
-        <Route path="/repos/:repoName" component={RepoDetailsPage} />
+        <Route path="/repos/:owner/:repoName" component={RepoDetailsPage} />
         <Route path="*">
           <h1>404 - Not Found</h1>
         </Route>

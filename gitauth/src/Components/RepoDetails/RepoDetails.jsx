@@ -5,14 +5,14 @@ import { fetchRepoDetailsAsync } from '../../Features/reposSlice';
 
 
 const RepoDetailsPage = () => {
-    const { repoName } = useParams();
+    const { repoName, owner } = useParams();
     const dispatch = useDispatch();
     const selectedRepo = useSelector((state) => state.repos.selectedRepo);
     const loading = useSelector((state) => state.repos.loading);
     debugger;
     useEffect(() => {
-        dispatch(fetchRepoDetailsAsync({ owner: 'github', repo: repoName }));
-    }, [dispatch, repoName]);
+        dispatch(fetchRepoDetailsAsync({ owner: owner, repo: repoName }));
+    }, [dispatch, repoName, owner]);
 
     return (
         <div>

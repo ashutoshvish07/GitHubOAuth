@@ -22,7 +22,7 @@ const ReposPage = () => {
                 <ul>
                     {trendingRepos.map((repo) => (
                         <li>
-                            <Link key={repo.id} to={`/repos/${repo.name}`} >{repo.name}</Link>
+                            <Link key={repo.id} to={`/repos/${repo.owner.login}/${repo.name}`} >{repo.name}</Link>
                         </li>
                     ))}
                 </ul>
