@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LoginPage from './Components/LoginPage/Login';

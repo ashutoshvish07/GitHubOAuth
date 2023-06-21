@@ -18,9 +18,10 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
-            <h1>Login Page</h1>
-            <button onClick={handleLogin}>Login with GitHub</button>
+        <div className="d-flex justify-content-center align-items-center">
+            <h1 >Login Page</h1>
+
+            <button className="btn btn-success" onClick={handleLogin}>Login with GitHub</button>
         </div>
     );
 };
