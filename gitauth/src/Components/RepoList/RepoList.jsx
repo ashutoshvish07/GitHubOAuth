@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTrendingReposAsync } from '../../Features/reposSlice';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Card from '../Card/Card';
 
 
 const ReposPage = () => {
@@ -14,18 +15,20 @@ const ReposPage = () => {
     }, [dispatch]);
 
     return (
-        <div>
-            <h1>Trending Repositories</h1>
+        <div className='container-fluid'>
+            <div className='text-center mt-2 mb-2'>
+                <h1>Trending Repositories</h1>
+            </div>
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <ul>
+                <div className='row row-cols-3 g-4'>
                     {trendingRepos.map((repo) => (
-                        <li>
-                            <Link key={repo.id} to={`/repos/${repo.owner.login}/${repo.name}`} >{repo.name}</Link>
-                        </li>
+                        <div className='col col-sm-6 col-md-4 col-lg-3 col-xs-12'>
+                            <Card key={repo.id} repo={repo} />
+                        </div>
                     ))}
-                </ul>
+                </div>
             )}
         </div>
     );

@@ -19,7 +19,6 @@ export const fetchTrendingReposAsync = createAsyncThunk(
 export const fetchRepoDetailsAsync = createAsyncThunk(
     'repos/fetchRepoDetails',
     async ({ owner, repo }) => {
-        debugger
         const repoDetails = await fetchRepoDetails(owner, repo);
         return repoDetails;
     }
